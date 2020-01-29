@@ -1,0 +1,25 @@
+<h1>Login Form</h1>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+ <input type="text" placeholder="UserName" formControlName="id" required/>
+ <span *ngIf="registerForm.controls.email.errors?.required">Username is required</span>
+
+ <br><br><br><input type="password" placeholder="Password" formControlName="password" required/>
+ <span *ngIf="registerForm.controls.password.errors?.required">Password is required</span>
+  <span *ngIf="registerForm.controls.password.errors?.pattern">Password is not valid</span>
+
+
+  <br><br><br><input type="text" placeholder="Name" formControlName="name" required/>
+ <span *ngIf="registerForm.controls.name.errors?.required">Name is required</span>
+  <span *ngIf="registerForm.controls.name.errors?.pattern">Name is not valid</span>
+
+ <br><br><br><input type="text" placeholder="Email" formControlName="email" required />
+ <span *ngIf="registerForm.controls.email.errors?.required">Email is required</span>
+ <span *ngIf="registerForm.controls.email.errors?.pattern">Email is not valid</span>
+
+
+ <br><br><br><input type="text" placeholder="Mobile" formControlName="mobile" required/>
+ <span *ngIf="registerForm.controls.mobile.errors?.required">Mobile number is required</span>
+ <span *ngIf="registerForm.controls.mobile.errors?.pattern">Mobile number is not valid</span>
+
+ <br><br><br><button type="submit">Register</button>
+</form>
